@@ -93,8 +93,6 @@
     description = "flip";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
     ];
   };
 
