@@ -9,6 +9,10 @@ echo soft linked ~/nix-config and /etc/nixos
 sudo nixos-rebuild switch --flake ~/nix-config/#nixos-btw
 echo rebuilt nix with the flake in ~/nix-config
 
-git clone --quiet https://github.com/kwerkq/newdots ~/.config/
+sudo rm -rf ~/.config
+nix-shell -p git --run "git clone https://github.com/kwerkq/newdots ~/.config/"
 
-git clone --quiet https://github.com/orangci/walls-catppuccin-mocha ~/Pictures/Wallpapers/walls-catppuccin-mocha/
+nix-shell -p git --run "git clone https://github.com/orangci/walls-catppuccin-mocha ~/Pictures/Wallpapers/walls-catppuccin-mocha/"
+
+sudo rm -rf ~/Pictures/Wallpapers/walls-catppuccin-mocha/.*
+sudo rm -rf ~/Pictures/Wallpapers/walls-catppuccin-mocha/README.md
