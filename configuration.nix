@@ -18,11 +18,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos-btw"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -79,7 +74,6 @@
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
   fonts.packages = with pkgs; [
 	nerd-fonts.jetbrains-mono
   ];
@@ -89,6 +83,8 @@
   programs.sway.enable = true;
   programs.fish.enable = true;
   services.displayManager.ly.enable = true;
+
+  #security.doas.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
